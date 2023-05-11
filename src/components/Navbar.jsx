@@ -10,21 +10,22 @@ export default function Navbar() {
                <img src="https://img.icons8.com/metro/26/null/shop.png"/>
                <h1>Store</h1> 
             </div>
+            <div className="container-nav-list">
+            <ul className="nav-list">
+                <li><a href="">Sign up</a></li>
+                <li><a href="">Login</a></li>
+                <li className="car">
+                  <button><img src="https://img.icons8.com/material/24/000000/add-shopping-cart--v1.png"/></button>  
+                  <span>0</span>
+                </li>
+            </ul>
+            </div>
             <div>
             <Search/>
             <Category/>
-            </div>
-            <ul>
-                <li><a href="">Registrate</a></li>
-                <li><a href="">Inicia Sesión</a></li>
-                <li>
-                  <button><img src="https://img.icons8.com/material/24/000000/add-shopping-cart--v1.png"/></button>  
-                </li>
-                <li>
-                   <span>0</span>
-                </li>
-            </ul>
+          </div>
         </nav>
+
       </header>
        
     </>

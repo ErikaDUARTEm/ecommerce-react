@@ -6,22 +6,26 @@ export default function ListProducts() {
       const product = async ()=>{
        const fetchProd =  await fetch('https://dummyjson.com/products')
        const json = await fetchProd.json()
-       const data = await json
-       setListProducts(()=> data.products)
+       setListProducts(()=> json.products)
       }
       product()
     }, [])
 
-    console.log(listProducts)
   return (
     <>
-        <section>
+        <section className="container-all-products">
         {
-          listProducts.map((product) => (
-          <div key={product.id}>
-             <img src={product.images[0]}></img>
-              <h2>{product.title}</h2>
-          </div>
+          listProducts?.map((product) => (
+          <article className="product" key={product.id}>
+            <div className="container-image-product">
+            <img src={product.images[0]} className="image-product"/>
+            </div>
+           
+            <div className="title-product">
+              <h3>{product.title}</h3>
+              <h3>${product.price}</h3>
+            </div>  
+          </article>
         ) 
         )}
         </section>

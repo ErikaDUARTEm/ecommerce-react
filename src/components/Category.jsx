@@ -1,13 +1,14 @@
 
 export default function Category() {
   return (
-    <div className="Category-header">
-        <nav className="nav-Category-header">
+    <div className="category-header">
+        <nav className="nav-category-header">
             <ul className="list-category-header">
-                <li><a>Ropa</a></li>
-                <li><a>Juguetes</a></li>
-                <li><a>Zapatos</a></li>
-                <li><a>Tecnología</a></li>
+                <li><a>Smartphones</a></li>
+                <li><a>Fragrances</a></li>
+                <li><a>Laptos</a></li>
+                <li><a>Skincare</a></li>
+                <li><a>Groceries</a></li>
             </ul>
         </nav>
     </div>
