@@ -4,7 +4,6 @@ import { ProductsContext } from "../context/ProductsContext"
 
 export default function ListProducts() {
     const {listProducts} = useContext(ProductsContext)
-
   return (
     <>
         <section className="container-all-products">
