@@ -4,6 +4,9 @@ import { ProductsContext } from "../context/ProductsContext"
 
 export default function ListProducts() {
     const {listProducts} = useContext(ProductsContext)
+    const handleClick= (e)=>{
+    console.log("click", e.target.id)
+    }
   return (
     <>
         <section className="container-all-products">
@@ -14,9 +17,15 @@ export default function ListProducts() {
             <img src={product.images[0]} className="image-product"/>
             </div>
             <div className="title-product">
-              <h4>{product.title}</h4>
-              <h4>${product.price}</h4>
+              <p>{product.title}</p>
+              <p>{product.description.slice(0, 16)}</p>
+            <div className="price">
+              <p>${product.price}</p> 
+              <button onClick={handleClick}  className="car-button"><img src="https://img.icons8.com/material/24/000000/add-shopping-cart--v1.png" id={product.id}/></button>  
+              </div>
+              
             </div>  
+            
           </article>
         ) 
         )}

@@ -3,7 +3,8 @@
   color: rgb(246, 242, 242);
   width: 100vw;
   height: 100vh;
-
+  font-family:  "Helvetica Neue", Helvetica, Arial;
+  font-size: 0.83rem;
 }
 body{
   margin: 0;
@@ -83,7 +84,7 @@ ul>li>a:visited{
 .list-category-header{
   justify-content: space-around;
   align-items: center;
-  color: rgba(237, 97, 10, 0.918);;
+  color: white;
 }
 .list-category-header:hover{
   cursor: pointer;
@@ -97,6 +98,7 @@ width: 90%;
 height: 35px;
 display: flex;
 justify-content: flex-end;
+
 }
 .nav-list{
   width: 30%;

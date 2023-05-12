@@ -10,7 +10,7 @@
 }
 .product{
     width: 20vw;
-    height: 30vh;
+    height: 40vh;
     background-color: rgba(237, 97, 10, 0.919);
     object-fit: contain;
     flex-direction: column;
@@ -38,8 +38,10 @@
 .title-product{
     color:white;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
+    line-height:0;
 }
 .car{
     gap: 3px;
@@ -60,4 +62,22 @@
     gap: 20px;
     padding: 20px;
 
+}
+.search-category{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+.price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.select{
+    border-radius: 20px;
+    color: rgba(237, 97, 10, 0.919);
+    padding: 2px;
+    margin: 5px;
 }

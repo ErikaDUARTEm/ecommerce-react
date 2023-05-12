@@ -1,8 +1,8 @@
 import './App.css'
-import ListProducts from './components/ListProducts'
 import Navbar from './components/Navbar'
-import Category from './components/Category'
 import AllCategory from './components/AllCategory'
+import ListProducts from './components/ListProducts'
+
 
 function App() {
 
@@ -10,7 +10,6 @@ function App() {
     <>
       <Navbar/>
       <AllCategory/>
-      <Category/>
       <ListProducts/>
     </>
   )

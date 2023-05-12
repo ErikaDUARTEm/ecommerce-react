@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 
 
-
-
 export default function AllCategory() {
   const [categories, setCategories] = useState([]);
-
 
   const fetchCategories = async (e) => {
     e.preventDefault()
     const category= e.target.value
-
+ 
         try{
                 const fetchCategories = await fetch(`https://dummyjson.com/products/category/${category}`)
                 const resp = await fetchCategories.json()
@@ -21,10 +18,12 @@ export default function AllCategory() {
   useEffect(() => {
     fetchCategories()
   }, [categories]);
-console.log(categories)
+  const handleClick= (e)=>{
+        console.log("click", e.target.id)
+        }
   return (
     <>
-      <select name="categories" onChange={fetchCategories}>
+      <select name="categories" onChange={fetchCategories} className="select">
         <option value="allCategories" autoFocus>AllCategories</option>
         <option value="smartphones">Smartphones</option>
         <option value="laptops">Laptops</option>
@@ -54,14 +53,19 @@ console.log(categories)
             <img src={product.images[0]} className="image-product"/>
             </div>
             <div className="title-product">
-              <h4>{product.title}</h4>
-              <h4>${product.price}</h4>
+              <p>{product.title}</p>
+              <p>{product.description.slice(0, 16)}</p>
+            <div className="price">
+              <p>${product.price}</p> 
+              <button onClick={handleClick}  className="car-button"><img src="https://img.icons8.com/material/24/000000/add-shopping-cart--v1.png" id={product.id}/></button>  
+              </div>
+              
             </div>  
+            
           </article>
-))}
+))
+}
       </section>
-      
-     
     </>
   )
 }

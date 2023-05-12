@@ -6,7 +6,6 @@ export default function Search() {
   const {listProducts} = useContext(ProductsContext)
    
    const fetchSearch = (e)=>{
-    console.log(e)
     e.preventDefault()
     const input = e.target.search.value
     console.log(input)

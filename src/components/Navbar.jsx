@@ -1,4 +1,6 @@
 
+import AllCategory from "./AllCategory";
+import Category from "./Category";
 import Search from "./Search";
 
 export default function Navbar() {
@@ -20,10 +22,9 @@ export default function Navbar() {
                 </li>
             </ul>
             </div>
-            <div>
+            <div className="search-category">
             <Search/>
-            
-           
+            <Category/>
           </div>
         </nav>
 
