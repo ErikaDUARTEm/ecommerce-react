@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LOGIN, SINGUP } from "../routes/routesPath";
+import { HOME, LOGIN, SINGUP } from "../routes/routesPath";
 import Category from "./Category";
 import Search from "./Search";
 
@@ -9,8 +9,10 @@ export default function Navbar() {
       <header>
         <nav className="nav-Navbar">
             <div className="logo">
-            <img width="64" height="64" src="https://img.icons8.com/wired/64/000000/shop.png" alt="shop"/>
-                <h1>Store</h1> 
+               <Link to={HOME}>
+                <img width="64" height="64" src="https://img.icons8.com/wired/64/000000/shop.png" alt="shop"/>
+                </Link>
+                <h1>Store</h1>
             </div>
             <div className="container-nav-list">
             <ul className="nav-list">

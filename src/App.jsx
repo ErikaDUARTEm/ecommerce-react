@@ -10,11 +10,13 @@ import Fragrances from './components/Fragrances';
 import Laptos from './components/Laptos';
 import Skincare from './components/Skincare';
 import Groceries from './components/Groceries';
+import Navbar from './components/Navbar';
 
 function App() {
 
   return (
     <Router>
+     <Navbar />
       <Routes>
         <Route path={HOME} element={<PublicRoute/>}>
           <Route index path={HOME} element={<Home/>}/>
@@ -25,7 +27,6 @@ function App() {
           <Route path={LAPTOS} element={<Laptos/>} />
           <Route path={SKINCARE} element={<Skincare />} />
           <Route path={GROCERIES} element={<Groceries/>}/>
-          
         </Route>
       </Routes>
     </Router>
