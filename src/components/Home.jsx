@@ -8,6 +8,7 @@ export default function Home({ onSelectAllCategories }) {
   
     return (
       <>
+       
         <AllCategory onSelectAllCategories={handleSelectAllCategories} />
       </>
     );

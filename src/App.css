@@ -84,3 +84,8 @@ align-items: center;
 .smartphones, .login, .register{
     color: red;
 }
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
