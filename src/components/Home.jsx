@@ -1,13 +1,14 @@
-
 import AllCategory from './AllCategory'
-import ListProducts from './ListProducts'
 
-export default function Home() {
-  return (
-    <>
-        <AllCategory />
-        <ListProducts />
-    </>
-    
-  )
-}
+
+export default function Home({ onSelectAllCategories }) {
+    const handleSelectAllCategories = (value) => {
+      onSelectAllCategories(value);
+    };
+  
+    return (
+      <>
+        <AllCategory onSelectAllCategories={handleSelectAllCategories} />
+      </>
+    );
+  }
