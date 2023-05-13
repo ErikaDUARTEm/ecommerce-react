@@ -1,5 +1,5 @@
-
-import AllCategory from "./AllCategory";
+import { Link } from "react-router-dom";
+import { LOGIN, SINGUP } from "../routes/routesPath";
 import Category from "./Category";
 import Search from "./Search";
 
@@ -14,8 +14,8 @@ export default function Navbar() {
             </div>
             <div className="container-nav-list">
             <ul className="nav-list">
-                <li><a href="">Sign up</a></li>|
-                <li><a href="">Login</a></li>
+                <li><Link to={SINGUP}>Sign up</Link></li>|
+                <li><Link to={LOGIN}>Login</Link></li>
                 <li className="car">
                   <button className="car-button"><img src="https://img.icons8.com/material/24/000000/add-shopping-cart--v1.png"/></button>  
                   <span>0</span>
