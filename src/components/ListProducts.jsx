@@ -21,7 +21,7 @@ export default function ListProducts() {
               <p>{product.description.slice(0, 16)}</p>
             <div className="price">
               <p>${product.price}</p> 
-              <button onClick={handleClick}  className="car-button"><img src="https://img.icons8.com/material/24/000000/add-shopping-cart--v1.png" id={product.id}/></button>  
+              <button onClick={() => handleClick(product.id)} className="car-button"><img src="https://img.icons8.com/material/24/000000/add-shopping-cart--v1.png" id={product.id}/></button>  
               </div>
               
             </div>  

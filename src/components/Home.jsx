@@ -1,4 +1,6 @@
 import AllCategory from './AllCategory'
+import PropTypes from 'prop-types';
+
 
 
 export default function Home({ onSelectAllCategories }) {
@@ -13,3 +15,6 @@ export default function Home({ onSelectAllCategories }) {
       </>
     );
   }
+  Home.propTypes = {
+    onSelectAllCategories: PropTypes.func.isRequired
+  };

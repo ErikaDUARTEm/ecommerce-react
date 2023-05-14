@@ -1,8 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { ProductsContext } from "../context/ProductsContext";
+import SearchResults from "./SearchResults";
+
 
 export default function Search() {
-  const [searchProducts, setSearchProducts] = useState();
+  const [searchProducts, setSearchProducts] = useState([]);
   const { listProducts } = useContext(ProductsContext);
 
   const fetchSearch = (e) => {
@@ -12,20 +14,29 @@ export default function Search() {
       }
       if (e.target) {
         const input = e.target.search.value;
-        const search = () => {
-          fetch(`https://dummyjson.com/products/search?q=${input}`)
-            .then(res => res.json())
-            .then(console.log)
-            .catch(error=>error)
-        }
-        setSearchProducts(search);
+        
+        const filteredProducts = listProducts.filter((product) => {
+          const searchTerm = input.toLowerCase();
+          const title = product.title.toLowerCase();
+          const description = product.description.toLowerCase();
+          const brand = product.brand.toLowerCase();
+          return (
+            title.includes(searchTerm) ||
+            description.includes(searchTerm) ||
+            brand.includes(searchTerm)
+          );
+        });
+        
+        setSearchProducts(filteredProducts)
       }
     }
   };
+console.log(searchProducts)
   //Buscador de productos
   useEffect(() => {
     fetchSearch();
-  }, [searchProducts]);
+  }, [])
+
   return (
     <div className="container-search">
       <form onSubmit={fetchSearch}>
@@ -36,9 +47,7 @@ export default function Search() {
           </button>
         </label>
       </form>
-      {searchProducts !== 0
-        ? listProducts.filter((product) => searchProducts === product)
-        : "No hay productos que coincidan con tu busqueda"}
+        {searchProducts !== [] ? (<SearchResults searchProducts={searchProducts}/>) : (<p>Search not found</p>)}
     </div>
   );
 }
